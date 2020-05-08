@@ -278,6 +278,7 @@
     NSString *percentageEscapedPath = [path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
     [self.httpManager GET:percentageEscapedPath
                parameters:params
+                  headers:nil
                  progress:nil
                   success:^(NSURLSessionDataTask *task, id responseObject) {
                       if (!success) return;
@@ -302,6 +303,7 @@
     NSString *percentageEscapedPath = [path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
     [self.httpManager GET:percentageEscapedPath
                parameters:params
+                  headers:nil
                  progress:nil
                   success:^(NSURLSessionDataTask *task, id responseObject) {
                       if (!success) return;
@@ -335,6 +337,7 @@
     NSDictionary *params = [self dictionaryWithAccessTokenAndParameters:parameters];
     [self.httpManager POST:path
                 parameters:params
+                   headers:nil
                   progress:nil
                    success:^(NSURLSessionDataTask *task, id responseObject) {
                        (success)? success((NSDictionary *)responseObject) : 0;
@@ -353,6 +356,7 @@
     NSDictionary *params = [self dictionaryWithAccessTokenAndParameters:parameters];
     [self.httpManager DELETE:path
                   parameters:params
+                     headers:nil
                      success:^(NSURLSessionDataTask *task, id responseObject) {
                          (success)? success((NSDictionary *)responseObject) : 0;
                      }
